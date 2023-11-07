@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="grimreaper"
+        src="//play-lh.googleusercontent.com/yH0zYFHf1eM36PV7tjrYcq4DaGweh-zoG-g6iBwY-RosmN7nvPVkRw9myra7-4RIxtge">
+    <p id="score">score=0</p>
+    <button id="Darouse">upgrade</button>
+    <button id="Awesome">auto</button>
+</body>
+
+</html>
+
+<script>
+    var score = 0
+    var increaseValue = 1
+    var cost = 10
+    document.getElementById("grimreaper").addEventListener("click", addScore)
+    document.getElementById("Darouse").addEventListener("click", upgradeScore)
+    document.getElementById("Awesome").addEventListener("click", autoScore)
+
+    function addScore() {
+        score = score + increaseValue
+        document.getElementById("score").innerText = score
+    }
+
+    function upgradeScore() {
+        if (score >= 10) {
+            score = score - cost
+            increaseValue = 5
+        }
+    }
+    
+    function autoScore(){
+        setInterval(addScore, 90000000000);
+    }
+</script>
